@@ -10,6 +10,5 @@ jobs:
         name: First job
         runs-on: ubuntu-latest
         steps:    
-        - name: Print a date on Ubantu
-        - run: date  
+        - run: dat  
    
