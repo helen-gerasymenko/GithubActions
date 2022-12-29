@@ -12,22 +12,4 @@ jobs:
         steps:    
         - name: Print a date on Ubantu
         - run: date  
-    windows:
-        name: Second job
-        runs-on: windows-latest
-        steps:
-        - name: Print a date on Windows
-        - run: date
-    macos:
-        name: Third job
-        runs-on: macos-latest
-        steps:
-        - name: Print a date on MacOS
-        - run: date       
-    depends:
-        name: Forth job
-        needs: [ubuntu, windows, macos]
-        runs-on: ubuntu-latest
-        steps:
-        - name: Print a date on Ubantu
-        - run: date
+   
