@@ -6,29 +6,29 @@ on:
   workflow_dispatch:
 
 jobs:
-    job1:
+    ubuntu:
         name: First job
         runs-on: ubuntu-latest
         steps:    
             - name: Print a date on Ubantu
               uses: ajilraju/actions-date@v0.1
 
-    job2:
+    windows:
         name: Second job
         runs-on: windows-latest
         steps:
             - name: Print a date on Windows
-              uses: ajilraju/actions-date@v0.1
-    job3:
+            - run : date
+    macos:
         name: Third job
         runs-on: macos-latest
         steps:
             - name: Print a date on MacOS
-              uses: ajilraju/actions-date@v0.1         
-    job4:
+            - run : date       
+    ubuntu:
         name: Forth job
-        needs: [job1, job2, job3]
+        needs: [ubuntu, windows, macos]
         runs-on: ubuntu-latest
         steps:
             - name: Print a date on Ubantu
-              uses: ajilraju/actions-date@v0.1
+            - run : date
