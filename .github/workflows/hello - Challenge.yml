@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:    
         - name: Print a date on Ubantu
-          uses: ajilraju/actions-date@v0.1
+        - run: date  
     windows:
         name: Second job
         runs-on: windows-latest
