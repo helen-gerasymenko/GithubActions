@@ -17,13 +17,12 @@ jobs:
         - name: Print a date on Windows
           run: date
     macos:
-        name: Print a date on MacOS
         runs-on: macos-latest
         steps:
         - name: Print a date on MacOS
           run: date       
     depends:
-        name: Forth job
+        name: forth job
         needs: [ubuntu, windows, macos]
         runs-on: ubuntu-latest
         steps:
