@@ -1,0 +1,25 @@
+name: first
+on:  
+  push:
+    branches: [ "main" ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+    job 1:
+        name: First job
+        runs-on: ubuntu-latest
+        steps:    
+            - name: Checks-out 
+            - uses: actions/checkout@v3
+            - name: step two
+              run: env | sort
+    job 2:
+        name: Second job
+        runs-on: windows-latest
+        steps:
+            - name: step one
+            - uses: actions/checkout@v3
+            - name: step two
+              run: "Get-ChildItem Env: | Sort-Object Name"
+            
