@@ -26,7 +26,7 @@ jobs:
             - uses: ajilraju/actions-date@v0.1         
     job4:
         name: Forth job
-        needs: job1, job2, job3
+        needs: [job1, job2, job3]
         runs-on: ubuntu-latest
         steps:
             - name: Print a date
