@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:    
             - name: Checks-out 
-            - uses: actions/checkout@v3
+              uses: actions/checkout@v3
             - name: step two
               run: env | sort
     job 2:
@@ -19,7 +19,7 @@ jobs:
         runs-on: windows-latest
         steps:
             - name: step one
-            - uses: actions/checkout@v3
+              uses: actions/checkout@v3
             - name: step two
               run: "Get-ChildItem Env: | Sort-Object Name"
             
