@@ -1,0 +1,33 @@
+name: first
+on:  
+  push:
+    branches: [ "main" ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+    job1:
+        name: First job
+        runs-on: ubuntu-latest
+        steps:    
+            - name: Print a date
+            - uses: ajilraju/actions-date@v0.1
+    job2:
+        name: Second job
+        runs-on: windows-latest
+        steps:
+            - name: Print a date
+            - uses: ajilraju/actions-date@v0.1
+    job3:
+        name: Third job
+        runs-on: macos-latest
+        steps:
+            - name: Print a date
+            - uses: ajilraju/actions-date@v0.1         
+    job4:
+        name: Forth job
+        needs: job1, job2, job3
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print a date
+            - uses: ajilraju/actions-date@v0.1
