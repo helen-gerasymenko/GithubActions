@@ -1,0 +1,20 @@
+name: artifact-challenge
+on: [push]
+env: 
+    ARTIFACT_NAME: 'HELEN's artifact'
+    
+jobs:
+    job1:
+      name: First job
+      runs-on: ubuntu-latest
+      steps:
+      - name: Check out code
+        uses: actions/checkout@v1
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+            name: linux
+            path: ./${{ env.ARTIFACT_NAME }}
+      
+      
