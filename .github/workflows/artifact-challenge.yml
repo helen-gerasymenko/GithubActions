@@ -1,7 +1,7 @@
 name: artifact-challenge
 on: [push]
 env: 
-    ARTIFACT_NAME: HELEN
+    ARTIFACT_NAME: 'HELEN artifact'
     
 jobs:
     job1:
