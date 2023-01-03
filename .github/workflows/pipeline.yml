@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Checkout files
-      uses: Bhacaz/checkout-files@v2
-      with:
+     uses: Bhacaz/checkout-files@v2
+     with:
        files: py-app
 
     - name: Setup python environment
