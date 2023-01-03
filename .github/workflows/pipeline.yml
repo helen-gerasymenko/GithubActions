@@ -12,13 +12,9 @@ jobs:
       with:
         files: py-app
         
-    - name: Install dependencies
-      run: pub get
-      working-directory: py-app    
-
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1
-     
+      working-directory: ./py-app
       
     - name: Install requirements
       run: pip install --quiet --requirement requirements.txt
