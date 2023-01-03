@@ -1,18 +1,15 @@
 name: Pipeline
 
 on: [push]
-defaults:
-  run: py-app
 env:
   APPLICATION_NAME: app2
 jobs:
   lint:
     runs-on: ubuntu-18.04
-    defaults:
-      run:
-        working-directory: py-app
     steps:
     - uses: actions/checkout@v1
+      run: pub get
+      working-directory: dart_project
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1
     - name: Install requirements
