@@ -18,7 +18,6 @@ jobs:
       
     - name: Install requirements
       run: pip install --quiet --requirement requirements.txt
-      working-directory: ./py-app
       
     - name: Lint code
       run: |
