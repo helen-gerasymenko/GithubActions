@@ -2,8 +2,8 @@ name: pipeline
 
 on: [push]
 
-env:
-   APPLICATION_NAME: APP
+defaults:
+  run: py-app
 
 jobs:
   job1:
