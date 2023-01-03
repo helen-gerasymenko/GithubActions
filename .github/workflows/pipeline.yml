@@ -6,7 +6,8 @@ env:
    APPLICATION_NAME: APP
 
 jobs:
-  lint:
+  job1:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
      - name: Checkout files
