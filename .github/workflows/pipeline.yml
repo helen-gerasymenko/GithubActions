@@ -10,7 +10,9 @@ jobs:
         run:
            working-directory: ./py-app
     steps:
-    - uses: actions/checkout@v1
+    - uses: Bhacaz/checkout-files@v2 #actions/checkout@v2
+      with:
+         files: py-app
     - name: Setup Python environment
       uses: actions/setup-python@v4.4.0
     - name: Install requirements
