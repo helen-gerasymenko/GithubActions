@@ -6,6 +6,9 @@ env:
 jobs:
   lint:
     runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: ./py-app
     steps:
     - name: Checkout files
       uses: Bhacaz/checkout-files@v2
@@ -23,9 +26,7 @@ jobs:
       run: |
         flake8 --ignore=E501,E231 *.py
         pylint --disable=C0301 --disable=C0326 *.py
-      working-directory: ./py-app
         
     - name: Run unit tests
       run: |
         python -m unittest --verbose --failfast
-      working-directory: ./py-app
