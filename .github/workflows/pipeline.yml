@@ -10,8 +10,7 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-    - name: Check out code
-      - name: Checkout files
+     - name: Checkout files
       uses: Bhacaz/checkout-files@v2
       with:
        files: py-app
