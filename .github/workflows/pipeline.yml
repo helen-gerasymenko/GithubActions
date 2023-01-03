@@ -11,16 +11,14 @@ jobs:
         working-directory: ./py-app
     steps:
     - name: Checkout files
-      uses: Bhacaz/checkout-files@v2
-      with:
-        files: py-app
+      uses: actions/checkout@v1
         
     - name: Setup Python environment
       uses: actions/setup-python@v4.4.0
       
       
     - name: Install requirements
-      run: pip install --quiet --requirement ./requirements.txt
+      run: pip install --quiet --requirement requirements.txt
       working-directory: ./py-app
       
     - name: Lint code
