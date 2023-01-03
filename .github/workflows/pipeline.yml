@@ -1,34 +1,31 @@
 name: pipeline
-
 on: [push]
-
 defaults:
   run: py-app
-
 jobs:
-  job1:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-     - name: Checkout files
-       uses: Bhacaz/checkout-files@v2
-       with:
-         files: py-app
+     job1:
+        name: Lint
+        runs-on: ubuntu-latest
+        steps:
+         - name: Checkout files
+           uses: Bhacaz/checkout-files@v2
+           with:
+             files: py-app
 
-    - name: Setup python environment
-      uses: actions/setup-python@v4.4.0
+        - name: Setup python environment
+          uses: actions/setup-python@v4.4.0
 
-    - name: Install requirements
-      run: pip install --quiet --requirement requirements.txt
-      
-    - name: Lint code
-      run: |
-        flake8 --ignore=E501,E231 *.py
-        pylint --disable=C0301 --disable=C0326 *.py
-        
-    - name: Run unit tests
-      run: |
-        python -m unittest --verbose --failfast
+        - name: Install requirements
+          run: pip install --quiet --requirement requirements.txt
+          
+        - name: Lint code
+          run: |
+            flake8 --ignore=E501,E231 *.py
+            pylint --disable=C0301 --disable=C0326 *.py
+            
+        - name: Run unit tests
+          run: |
+            python -m unittest --verbose --failfast
 
 
 
