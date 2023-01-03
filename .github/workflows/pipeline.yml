@@ -9,9 +9,6 @@ jobs:
     steps:
     - name: Checkout files
       uses: actions/checkout@v1
-      
-    - name: Install dependencies
-      run: pub get
       working-directory: py-app
 
     - name: Setup Python environment
