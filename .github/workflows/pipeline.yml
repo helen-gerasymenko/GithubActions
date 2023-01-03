@@ -5,7 +5,10 @@ env:
   APPLICATION_NAME: app2
 jobs:
   lint:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+           working-directory: ./py-app
     steps:
     - uses: actions/checkout@v1
     - name: Setup Python environment
