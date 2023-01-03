@@ -7,11 +7,16 @@ jobs:
   lint:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout files
+      uses: actions/checkout@v1
+      
+    - name: Install dependencies
       run: pub get
-      working-directory: dart_project
+      working-directory: py-app
+
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1
+      
     - name: Install requirements
       run: pip install --quiet --requirement requirements.txt
     - name: Lint code
