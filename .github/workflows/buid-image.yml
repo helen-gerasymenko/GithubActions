@@ -20,8 +20,7 @@ jobs:
     - name: Run unit tests
       run: |
         python -m unittest --verbose --failfast
-   
-   build_image:
+  build_image:
     needs: [lint]
     runs-on: ubuntu-18.04
     steps:
